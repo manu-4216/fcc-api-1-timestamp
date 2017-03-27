@@ -3,12 +3,14 @@ var path = require('path')
 var dateFormat = require('dateformat')
 var app = express()
 
+app.use(express.static(__dirname + '/public'))
+
 /** 
  * INPUT: root path
  * OUTPUT: static file: 'index.html'
  */
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'))
+    res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
 /** 
